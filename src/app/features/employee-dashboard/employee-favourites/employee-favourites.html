@@ -1,0 +1,5 @@
+<div class="m-5">
+	<app-employee-table [employees]="favouriteEmployees()"
+						[resource]="this.employeeService.employeesResource" (rowClicked)="rowClicked($event)">
+	</app-employee-table>
+</div>

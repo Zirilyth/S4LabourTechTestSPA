@@ -1,0 +1,25 @@
+<div class="flex gap-4 min-h-screen">
+	<div class="border-4 m-5 rounded-2xl shadow-2xl flex-col flex-grow-3">
+		<div class="flex flex-row gap-4 ">
+			<div class="flex-col flex-grow">
+				<h1 class="text-3xl font-bold text-center">{{ employee().name.fullName }}</h1>
+			</div>
+			<div class="flex-col">
+				<img [ngSrc]="employee().picture.large" [alt]="'Image of '+ employee().name.fullName"
+					 class=" m-5 rounded-2xl drop-shadow-2xl" height="250" width="250">
+			</div>
+		</div>
+	</div>
+	<div class="p-5 flex flex-col flex-grow-1 min-h-screen gap-4  ">
+		<app-employee-notes-table class=" bg-gray-600 p-5 flex-grow rounded-2xl shadow-2xl border-4 "
+								  [notesResource]="notesResource"></app-employee-notes-table>
+		<div class=" bg-gray-600 p-5 border-4 rounded-2xl shadow-2xl">
+			<input type="text" [formControl]="noteInput" class="text-input" (keydown.enter)="addNote()" placeholder="Note...">
+			@if (noteInput.invalid && noteInput.touched) {
+				<p class="mt-2 text-sm text-red-600 dark:text-red-500">
+					Please enter a note</p>
+			}
+		</div>
+
+	</div>
+</div>

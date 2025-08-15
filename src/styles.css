@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@import "tailwindcss/utilities";
+
+.btn-primary {
+	@apply text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800
+}
+
+.table {
+	@apply table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400
+}
+
+.table-header {
+	@apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400
+}
+
+.table-row {
+	@apply bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600
+}
+
+.label {
+	@apply block mb-2 text-sm font-medium dark:text-gray-900 text-white
+}
+
+.text-input {
+	@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
+.btn-dark {
+	@apply text-white bg-gray-600 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-700 dark:hover:bg-blue-500 dark:focus:ring-gray-700
+}
+
+.skeleton {
+	@apply bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md
+}

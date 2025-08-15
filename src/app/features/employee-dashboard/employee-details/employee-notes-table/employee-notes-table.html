@@ -1,0 +1,21 @@
+<div class=" min-h-full rounded-2xl flex-grow">
+	@if (notesResource()!.error()) {
+		<div>
+			<h1 class="p-10 text-center text-5xl">{{ notesResource()!.error()?.message }}</h1>
+			<button class="btn-primary" (click)="notesResource().reload()">Retry Request</button>
+		</div>
+	} @else if (notesResource()!.isLoading()) {
+		<app-table-skeleton></app-table-skeleton>
+	} @else {
+		@if (notesResource()!.hasValue()) {
+			@for (note of notesResource()!.value()!; track note.id) {
+				<div id="noteRow" class=" bg-gray-500 m-2 p-2 border-2 rounded-2xl h-20">
+					<p>{{ note.text }}</p>
+				</div>
+			} @empty {
+				<h1 class="p-10 text-center text-5xl">No Notes</h1>
+			}
+		}
+	}
+
+</div>
