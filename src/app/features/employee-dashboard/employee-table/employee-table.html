@@ -22,7 +22,7 @@
 				<td colspan="5">
 					<div class="flex-col flex justify-center items-center">
 						<h1 class="p-10 text-center text-5xl">Could not complete request for employees</h1>
-						<button class="btn-primary">Retry Request</button>
+						<button class="btn-primary" (click) ="resource().reload()">Retry Request</button>
 					</div>
 				</td>
 			} @else if (resource().isLoading()) {

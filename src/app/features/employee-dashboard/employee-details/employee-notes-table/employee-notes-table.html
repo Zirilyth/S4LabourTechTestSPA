@@ -1,8 +1,10 @@
-<div class=" min-h-full rounded-2xl flex-grow">
+<div class="min-h-full rounded-2xl flex-grow">
 	@if (notesResource()!.error()) {
 		<div>
-			<h1 class="p-10 text-center text-5xl">{{ notesResource()!.error()?.message }}</h1>
-			<button class="btn-primary" (click)="notesResource().reload()">Retry Request</button>
+			<div class="flex-col flex justify-center items-center">
+				<h1 class="p-10 text-center text-5xl text-gray-400">Could not complete request for employee notes</h1>
+				<button class="btn-primary " (click)="notesResource().reload()">Retry Request</button>
+			</div>
 		</div>
 	} @else if (notesResource()!.isLoading()) {
 		<app-table-skeleton></app-table-skeleton>

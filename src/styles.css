@@ -34,3 +34,6 @@
 .skeleton {
 	@apply bg-gray-300 dark:bg-gray-700 animate-pulse rounded-md
 }
+.deep-shadow {
+	box-shadow: 0 0 10px var(--color-black);
+}
