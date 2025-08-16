@@ -20,8 +20,10 @@
 		<tbody>
 			@if (resource().error()) {
 				<td colspan="5">
-					<h1 class="p-10 text-center text-5xl">{{ resource().error()?.message }}</h1>
-					<button class="btn-primary">Retry Request</button>
+					<div class="flex-col flex justify-center items-center">
+						<h1 class="p-10 text-center text-5xl">Could not complete request for employees</h1>
+						<button class="btn-primary">Retry Request</button>
+					</div>
 				</td>
 			} @else if (resource().isLoading()) {
 				<tr>
